@@ -8,6 +8,7 @@ import HomePage from "./pages/homepage/homepage.component"
 import ShopPage from "./pages/shop/shop.component"
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
+import CollectionPage from "./pages/collection/collection.component";
 
 import Header from "./components/header/header.component";
 
@@ -48,6 +49,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={ShopPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
+          <Route path={`/shop/:collectionId`} component={CollectionPage} />
           <Route exact path="/signin" render={() => this.props.currentUser ? (
             <Redirect to="/" />
           ) : (
